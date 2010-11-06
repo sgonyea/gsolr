@@ -10,12 +10,11 @@ Gem::Specification.new do |s|
   s.email       = ["me@sgonyea.com"]
   s.homepage    = "http://rubygems.org/gems/gsolr"
   s.summary     = %q{Generic Solr Client}
-  s.description = %q{This is a generic solr client, capable of talking to Solr and to Riak}
+  s.description = %q{This is a generic solr client, capable of talking to Solr, as well as Riak}
 
   s.rubyforge_project = "gsolr"
 
   s.add_dependency('json', '~>1.4.6')
-#  s.add_dependency('json', '~>1.4.6')
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
