@@ -15,6 +15,8 @@ Gem::Specification.new do |s|
   s.rubyforge_project = "gsolr"
 
   s.add_dependency('json', '~>1.4.6')
+  
+  s.add_development_dependency "rspec"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

@@ -1,3 +1,3 @@
 module Gsolr
-  VERSION = "0.0.1"
+  VERSION = "0.12.2"
 end
