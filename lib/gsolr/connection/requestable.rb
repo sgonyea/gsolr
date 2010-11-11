@@ -12,7 +12,8 @@ module GSolr
       def initialize(opts={})
         opts[:url]  ||= 'http://127.0.0.1:8983/solr'
         @opts         = opts
-        @uri          = URI.parse opts[:url]
+        @url          = opts[:url]
+        @uri          = URI.parse @url
       end
 
       # send a request to the connection
@@ -38,8 +39,6 @@ module GSolr
             http_context = self.get(path, params)
           end
         end
-
-        raise GSolr::RequestError.new("Solr Response: #{http_context[:message]}") unless http_context[:status_code] == 200
 
         return http_context
       end

@@ -7,7 +7,7 @@ describe GSolr do
     end
     
     it 'should create an instance of GSolr::Connection::NetHttp as the #connection' do
-      expected_class = GSolr::Connection::NetHttp
+      expected_class = GSolr::Connection::Streamly
       GSolr.connect.connection.should be_a(expected_class)
       GSolr.connect(:url=>'blah').connection.should be_a(expected_class)
     end

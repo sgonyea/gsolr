@@ -2,6 +2,7 @@ $:.unshift(File.dirname(__FILE__)) unless
   $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
 
 require 'json'
+require 'builder'
 
 module GSolr
   autoload :Message,    'gsolr/message'
@@ -10,7 +11,7 @@ module GSolr
 
   module Connectable
     def connect(opts={})
-      Client.new Connection::NetHttp.new(opts)
+      Client.new Connection::Streamly.new(opts)
     end
   end
   extend Connectable

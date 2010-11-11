@@ -5,7 +5,6 @@ require "gsolr/version"
 Gem::Specification.new do |s|
   s.name        = "gsolr"
   s.version     = Gsolr::VERSION
-  s.platform    = Gem::Platform::RUBY
   s.authors     = ["Scott Gonyea"]
   s.email       = ["me@sgonyea.com"]
   s.homepage    = "http://rubygems.org/gems/gsolr"
@@ -15,11 +14,11 @@ Gem::Specification.new do |s|
   s.rubyforge_project = "gsolr"
 
   s.add_dependency('json', '~>1.4.6')
+  s.add_dependency('streamly_ffi')
   
   s.add_development_dependency "rspec"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 end

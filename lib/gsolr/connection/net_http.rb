@@ -27,9 +27,7 @@ module GSolr
 
       def create_http_context(net_http_response, url, path, params, data=nil, headers={})
         full_url  = "#{@uri.scheme}://#{@uri.host}"
-
         full_url += ":#{@uri.port}" if @uri.port
-
         full_url += url
 
         return {

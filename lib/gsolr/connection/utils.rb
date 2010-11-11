@@ -69,7 +69,7 @@ module GSolr
                     next if val.to_s.empty?
 
                     if val.class == Array
-                      hash_to_query(v.map { |elem| [key, elem] })
+                      hash_to_query(val.map { |elem| [key, elem] })
                     else
                       build_param key, val
                     end
