@@ -41,10 +41,10 @@ describe GSolr::Connection::Streamly do
     end
   end
 =end
+=begin  Need to setup fakeweb
   context 'get/post' do
     include NetHttpHelper
 
-=begin  Need to setup fakeweb
     it 'should make a GET request as expected' do
       net_http_response = mock('net_http_response')
 
@@ -101,32 +101,27 @@ describe GSolr::Connection::Streamly do
       context[:params].should == {}
       context[:message].should == 'OK'
     end
-=end
-
   end
-  
+=end
   context 'build_url' do
-    
     include NetHttpHelper
-    
+
     it 'should incude the base path to solr' do
       result = net_http.send(:build_url, '/select', :q=>'*:*', :check=>'{!}')
       # this is a non-ordered hash work around,
       #   -- the order of the parameters in the resulting url will be different depending on the ruby distribution/platform
       # yuk.
       begin
-        result.should == '/solr/select?check=%7B%21%7D&q=%2A%3A%2A'
+        result.should == 'http://127.0.0.1:8983/solr/select?check=%7B%21%7D&q=%2A%3A%2A'
       rescue
-        result.should == '/solr/select?q=%2A%3A%2A&check=%7B%21%7D'
+        result.should == 'http://127.0.0.1:8983/solr/select?q=%2A%3A%2A&check=%7B%21%7D'
       end
     end
-    
   end
-  
+
   context 'encode_utf8' do
-    
     include NetHttpHelper
-    
+
     it 'should encode response body as utf-8' do
       string = 'testing'
       if RUBY_VERSION =~ /1\.9/

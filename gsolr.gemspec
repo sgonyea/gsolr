@@ -13,9 +13,9 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "gsolr"
 
-  s.add_dependency('json', '~>1.4.6')
+  s.add_dependency('json')
   s.add_dependency('streamly_ffi')
-  
+
   s.add_development_dependency "rspec"
 
   s.files         = `git ls-files`.split("\n")

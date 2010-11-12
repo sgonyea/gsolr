@@ -48,9 +48,8 @@ describe GSolr::Connection::Utils do
   end
   
   context 'escape method' do
-    
     include UtilsHelper
-    
+
     it 'should escape properly' do
       utils.escape('+').should == '%2B'
       utils.escape('This is a test').should == 'This+is+a+test'

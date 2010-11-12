@@ -40,6 +40,7 @@ module GSolr
           end
         end
 
+        raise GSolr::RequestError.new("Solr Response: #{http_context[:message]}") unless http_context[:status_code] == 200
         return http_context
       end
     end # module Requestable

@@ -6,8 +6,8 @@ module GSolr
       # Performs URI escaping so that you can construct proper
       # query strings faster.  Use this rather than the cgi.rb
       # version since it's faster.  (Stolen from Rack).
-      def escape(s)
-        s.to_s.gsub(/([^ a-zA-Z0-9_.-]+)/n) {
+      def escape(_string)
+        _string.to_s.gsub(/([^ a-zA-Z0-9_.-]+)/n) {
           #'%'+$1.unpack('H2'*$1.size).join('%').upcase
           '%'+$1.unpack('H2'*bytesize($1)).join('%').upcase
         }.tr(' ', '+')
@@ -53,7 +53,7 @@ module GSolr
       # Example:
       # build_param(:id, 1) == "id=1"
       def build_param(k,v)
-        "#{escape(k)}=#{escape(v)}"
+        "#{escape(k.to_s)}=#{escape(v.to_s)}"
       end
 
       #

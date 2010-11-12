@@ -1,20 +1,22 @@
 PATH
   remote: .
   specs:
-    gsolr (0.12.2)
-      json (~> 1.4.6)
+    gsolr (0.12.3)
+      json
       streamly_ffi
 
 GEM
   remote: http://rubygems.org/
   specs:
     builder (2.1.2)
-    curl_ffi (0.0.6)
+    curl_ffi (0.0.8)
       ffi
     diff-lcs (1.1.2)
     ffi (0.6.3)
       rake (>= 0.8.7)
+    ffi (0.6.3-java)
     json (1.4.6)
+    json (1.4.6-java)
     rake (0.8.7)
     rsolr (0.12.1)
       builder (>= 2.1.2)
@@ -26,16 +28,17 @@ GEM
     rspec-expectations (2.1.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.1.0)
-    streamly_ffi (0.1.6)
+    streamly_ffi (0.2.4)
       curl_ffi
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES
   builder
   gsolr!
-  json (~> 1.4.6)
+  json
   rsolr
   rspec
   rspec-core
